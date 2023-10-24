@@ -73,8 +73,29 @@
       <h1>Muhamamd Muhsin</h1>
       <p>I'm <span class="typed" data-typed-items="Full Stack Developer, Freelancer,"></span></p>
       <button class="btn btn-danger"><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About Me</span></a></button>
-      <button class="btn btn-primary"><a href="#" class="nav-link scrollto"><i class="bi bi-download"></i></i> <span>Downlaod CV</span></a></button>
+      <button class="btn btn-primary"  id="downloadButton"><a href="#" class="nav-link scrollto"><i class="bi bi-download"></i></i> <span>Downlaod CV</span></a></button>
     </div>
+
+    <script>
+      document.getElementById('downloadButton').addEventListener('click', function() {
+        // Create an invisible anchor element
+        var a = document.createElement('a');
+        a.style.display = 'none';
+      
+        // Set the href attribute to the PDF file you want to download
+        a.href = 'assets/pdf/muhsy-cv.pdf';
+        a.download = 'muhsy-cv.pdf';
+      
+        // Append the anchor to the document body
+        document.body.appendChild(a);
+      
+        // Trigger a click event on the anchor to initiate the download
+        a.click();
+      
+        // Remove the anchor element from the document
+        document.body.removeChild(a);
+      });
+      </script>
 
     
     
